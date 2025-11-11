@@ -1,0 +1,13 @@
+package org.iesdm.thymeleaf_practica;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class ThymeLeafPracticaApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
