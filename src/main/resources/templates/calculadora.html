@@ -6,19 +6,19 @@
 </head>
 <body>
 <form th:action="@{/calculadora}" th:object="${calculadoraDTO}" method="post">
-    <label for="nombre">Primera Nota =:</label>
-    <input type="text" id="nombre" th:field="*{nota1}" required>
+    <label for="nota1">Primera Nota =:</label>
+    <input type="text" id="nota1" th:field="*{nota1}" required>
 
-    <label for="nombre">Segunda Nota =:</label>
-    <input type="text" id="nombre" th:field="*{nota2}" required>
+    <label for="nota2">Segunda Nota =:</label>
+    <input type="text" id="nota2" th:field="*{nota2}" required>
 
-    <label for="nombre">Tercera Nota =:</label>
-    <input type="text" id="nombre" th:field="*{nota3}" required>
+    <label for="nota3">Tercera Nota =:</label>
+    <input type="text" id="nota3" th:field="*{nota3}" required>
 
 
     <button type="submit">Calcular Nota media</button>
 </form>
 
-<div th:if="${calculadora}"><span th:text="${calculadora}"></span></div>
+<div th:if="${cambio}"><span th:text="${cambio}"></span></div>
 </body>
 </html>
