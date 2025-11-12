@@ -10,14 +10,21 @@
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" th:field="*{nombre}" required>
 
-        <label for="nombre">idioma:</label>
-        <input type="text" id="idioma" th:field="*{idioma}" required>
-
-
+        
+        <div>
+            <label for="idiomaSelect">Idioma:</label>
+            <select id="idiomaSelect" th:field="*{idioma}" required>
+                <option value="es">Español</option>
+                <option value="en">Inglés</option>
+                <option value="fr">Francés</option>
+                <option value="it">Italiano</option>
+            </select>
+        </div>
         
 
-        
         <button type="submit">Enviar</button>
     </form>
+
+    <div th:if="${saludo}"><span th:text="${saludo}"></span></div>
 </body>
 </html>

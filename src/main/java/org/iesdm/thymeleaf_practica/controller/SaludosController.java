@@ -16,16 +16,29 @@ public class SaludosController {
     @GetMapping("/saludos")
     public String saludar(Model model ,@ModelAttribute SaludoDTO saludoDTO){
 
-
-
-
-
         return "saludos";
     }
 
     @PostMapping("/saludos")
 
     public String saludosSubmit(Model model,@ModelAttribute SaludoDTO saludoDTO){
+
+        if (saludoDTO.getIdioma().equals("es")){
+
+            model.addAttribute("saludo" , "Hola " + saludoDTO.getNombre());
+        } else if (saludoDTO.getIdioma().equals("en")) {
+
+            model.addAttribute("saludo" , "Hello " + saludoDTO.getNombre());
+
+        }else if(saludoDTO.getIdioma().equals("fr")){
+            model.addAttribute("saludo", "Bonjour " + saludoDTO.getNombre());
+        } else if (saludoDTO.getIdioma().equals("it")) {
+            model.addAttribute("saludo", "hii " + saludoDTO.getNombre());
+        }else {
+
+            model.addAttribute("saludo" , "Idioma icompatible" + saludoDTO.getNombre());
+        }
+
 
         log.info(saludoDTO.toString());
 
