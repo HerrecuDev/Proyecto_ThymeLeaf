@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Saludo</title>
+</head>
+<body>
+    <h1>Formulario de Saludo</h1>
+    <form th:action="@{/saludo}" th:object="${saludo}" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" th:field="*{nombre}" required>
+
+        <label for="nombre">idioma:</label>
+        <input type="text" id="idioma" th:field="*{idioma}" required>
+
+
+        
+
+        
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
