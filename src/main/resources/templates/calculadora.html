@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Calculadora</title>
+
+    <link rel="stylesheet" type="text/css" href="estilos/calculadoraEstilo.css">
+    </style>
 </head>
 <body>
 <form th:action="@{/calculadora}" th:object="${calculadoraDTO}" method="post">
@@ -15,7 +18,7 @@
     <label for="nota3">Tercera Nota =:</label>
     <input type="text" id="nota3" th:field="*{nota3}" required>
 
-
+   
     <button type="submit">Calcular Nota media</button>
 </form>
 

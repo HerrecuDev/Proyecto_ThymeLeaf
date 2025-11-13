@@ -5,15 +5,17 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public class EcuacionDTO {
 
-    private double a;
-    private double b;
-    private double c;
+    private BigDecimal a;
+    private BigDecimal b;
+    private BigDecimal c;
 
 
 

@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Ecuación de segundo grado</title>
 </head>
 <body>
+
+    <form th:action="@{/ecuacion/formulario/enviar}" method="post">
+
+        <label for="a">a</label>
+        <input type="number" id="a" th:field="*{a}"/>
+
+        <label for="b">b</label>
+        <input type="number" id="b" th:field="*{b}"/>
+
+        <label for="c">c</label>
+        <input type="number" id="c" th:field="*{c}"/>
+
+        <button type="submit">Calcular</button>
+
+    </form>
 
 </body>
 </html>
