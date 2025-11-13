@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversos de dólares a euros</title>
+</head>
+<body>
+<form th:action="@{/cambioMoneda}" th:object="${conversorDTO}" method="post">
+    <label for="dolares">Importe en dólares =:</label>
+    <input type="text" id="dolares" th:field="*{dolares}" required>
+
+
+    <button type="submit">Realizar cambio a Euros</button>
+</form>
+
+<div th:if="${cambio}"><span th:text="${cambio}"></span></div>
+</body>
+</html>
