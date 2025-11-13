@@ -6,20 +6,32 @@
 </head>
 <body>
 
-    <form th:action="@{/ecuacion/formulario/enviar}" method="post">
+    <form th:action="@{/ecuacion/formulario/enviar}" th:object="${ecuacionDTO}" method="post">
 
         <label for="a">a</label>
-        <input type="number" id="a" th:field="*{a}"/>
+        <input type="number" step="any" id="a" th:field="*{a}"/>
 
         <label for="b">b</label>
-        <input type="number" id="b" th:field="*{b}"/>
+        <input type="number" step="any" id="b" th:field="*{b}"/>
 
         <label for="c">c</label>
-        <input type="number" id="c" th:field="*{c}"/>
+        <input type="number" step="any" id="c" th:field="*{c}"/>
 
         <button type="submit">Calcular</button>
 
     </form>
+
+    <div th:if="${msg}">
+
+        <span th:text="${msg}"></span>
+        <th:block th:if="${raiz1 != null and raiz2 != null}">
+
+            <span>Raiz 1</span><input th:value="${raiz1}" readonly>
+            <span>Raiz 2</span><input th:value="${raiz2}" readonly>
+
+        </th:block>
+
+    </div>
 
 </body>
 </html>

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Calculadora</title>
 
-    <link rel="stylesheet" type="text/css" href="estilos/calculadoraEstilo.css">
-    </style>
+    <link rel="stylesheet" th:href="@{/calculadoraEstilo.css}">
+
 </head>
 <body>
 <form th:action="@{/calculadora}" th:object="${calculadoraDTO}" method="post">
@@ -22,6 +22,6 @@
     <button type="submit">Calcular Nota media</button>
 </form>
 
-<div th:if="${cambio}"><span th:text="${cambio}"></span></div>
+<div th:if="${media}"><span th:text="${media}"></span></div>
 </body>
 </html>
