@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Configurador coche</title>
+</head>
+<body>
+
+    <form th:action="@{/configurador}" th:objct="${configuradorCocheDTO}" method="post">
+        <label for="colorCoche">Color:</label>
+        <select id="colorCoche" th:field="*{Color}" required>
+            <option value="blanco">Blanco</option>
+            <option value="negro">Negro</option>
+            <option value="berenjena">Berenjena</option>
+
+
+
+
+
+
+
+    </form>
+
+</body>
+</html>
