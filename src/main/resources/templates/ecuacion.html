@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Ecuación de segundo grado</title>
+
+    <link rel="stylesheet" th:href="@{/ecuacion.css}">
+
 </head>
 <body>
 
@@ -22,16 +25,16 @@
     </form>
 
     <div th:if="${msg}">
-
-        <span th:text="${msg}"></span>
-        <th:block th:if="${raiz1 != null and raiz2 != null}">
-
-            <span>Raiz 1</span><input th:value="${raiz1}" readonly>
-            <span>Raiz 2</span><input th:value="${raiz2}" readonly>
-
-        </th:block>
-
+        <p th:text="${msg}"></p>
     </div>
+
+    <!-- Resultados -->
+    <div th:if="${raiz1 != null and raiz2 != null}">
+        <p>Raíz 1: <input th:value="${raiz1}" readonly></p>
+        <p>Raíz 2: <input th:value="${raiz2}" readonly></p>
+    </div>
+
+    
 
 </body>
 </html>

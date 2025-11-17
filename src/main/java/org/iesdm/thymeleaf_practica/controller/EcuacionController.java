@@ -45,7 +45,7 @@ public class EcuacionController {
             BigDecimal raiz1 = b.negate().add(raizDiscriminante).divide(BigDecimal.valueOf(2).multiply(a),MathContext.DECIMAL128);
             BigDecimal raiz2 = b.negate().subtract(raizDiscriminante).divide(BigDecimal.valueOf(2).multiply(a) , MathContext.DECIMAL128);
 
-            model.addAttribute("msg" ,"Ec sin soluciones" );
+
 
             model.addAttribute("raiz1" , raiz1);
             model.addAttribute("raiz2" , raiz2);

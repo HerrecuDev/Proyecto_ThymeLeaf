@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Conversos de dólares a euros</title>
+
+    <link rel="stylesheet" th:href="@{/cambioMoneda.css}">
 </head>
 <body>
 <form th:action="@{/cambioMoneda}" th:object="${conversorDTO}" method="post">
-    <label for="dolares">Importe en dólares =:</label>
+    <label for="dolares">Importe en dólares :</label>
     <input type="text" id="dolares" th:field="*{dolares}" required>
 
 

@@ -1,0 +1,189 @@
+/* saludo.css - versión simple y cálida */
+
+/* Variables básicas */
+:root {
+    --bg: #FBF6EE;
+    --card: #FFF8F2;
+    --primary: #8B3A3A;
+    --form-max-width: 520px;
+    --form-input-width: 360px;
+    --center-gap: 12px;
+    --accent: #C6863A;
+    --text: #3B2F2F;
+    --muted: #8C6A5A;
+    --border: #E6D6C3;
+    --radius: 8px;
+    --max-width: 980px;
+    --font-sans: Arial, Helvetica, sans-serif;
+    --font-serif: Georgia, "Times New Roman", serif;
+}
+
+/* Reset simple */
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-serif);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.5;
+}
+
+/* Contenedor centrado */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius));
+    padding: 20px;
+}
+
+/* Encabezado */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+/* Encabezado */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    
+}
+.logo {
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border-radius: 6px;
+    
+}
+h1 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--primary);
+}
+.lead {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+
+   
+}
+/* Navegación simple */
+nav a {
+    color: var(--primary);
+    text-decoration: none;
+    margin-left: 8px;
+    font-weight: 600;
+}
+
+/* Tarjeta de saludo */
+.saludo-card {
+    display: flex;
+    gap: 12px;
+    background: white;
+    border: 1px solid var(--border);
+    padding: 40px;
+    border-radius: 8px;
+    align-items: flex-start;
+
+   
+    
+}
+.avatar {
+    width: 64px;
+    height: 64px;
+    background: var(--primary);
+    border-radius: 6px;
+    flex: 0 0 64px;
+}
+.saludo-body {
+    flex: 1;
+}
+.meta {
+    color: var(--muted);
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+/* Lista de saludos */
+.list-saludos {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+}
+.list-saludos li {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 10px;
+    border-radius: 6px;
+
+    
+}
+
+/* Botones básicos */
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+.btn.secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--border);
+}
+
+/* Formularios simples */
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--primary);
+}
+input[type="text"], textarea, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: var(--font-sans);
+    margin-bottom: 10px;
+}
+textarea { min-height: 80px; }
+
+.salida{
+
+    padding:30px;
+    font-size: x-large;
+    
+}
+
+/* Pie */
+footer {
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Responsive sencillo */
+@media (max-width: 520px) {
+    header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .saludo-card { flex-direction: row; }
+}

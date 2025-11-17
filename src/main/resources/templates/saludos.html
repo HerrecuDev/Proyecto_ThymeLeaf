@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario de Saludo</title>
+
+    <link rel="stylesheet" th:href="@{/saludo.css}">
 </head>
 <body>
     <h1>Formulario de Saludo</h1>
@@ -25,6 +27,6 @@
         <button type="submit">Enviar</button>
     </form>
 
-    <div th:if="${saludo}"><span th:text="${saludo}"></span></div>
+    <div class="salida" th:if="${saludo}"><span th:text="${saludo}"></span></div>
 </body>
 </html>
