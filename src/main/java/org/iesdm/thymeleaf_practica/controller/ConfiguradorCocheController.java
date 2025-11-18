@@ -16,6 +16,7 @@ public class ConfiguradorCocheController {
     private String configurar(Model model , @ModelAttribute ConfiguradorCocheDTO configurardocheDTO){
 
 
+        model.addAttribute("ConfiguradorCocheDTO", configurardocheDTO);
         return "configurador";
 
 
@@ -23,7 +24,7 @@ public class ConfiguradorCocheController {
 
     //Los envia a la web :
 
-    @PostMapping
+    @PostMapping("")
     private String cambiarTapiceria(){
 
 

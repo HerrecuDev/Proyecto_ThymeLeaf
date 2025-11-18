@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabla de multiplicar</title>
+
+     <link rel="stylesheet" th:href="@{/tabla.css}">
+
+</head>
+<body>
+
+    <h1>Calcular tabla de multiplicar</h1>
+
+    <!-- Mi formulario -->
+    <form th:action = "@{/tabla}" th:object="${tablaMultiplicarDTO}" method="post">
+
+        <label>Número :</label>
+        <input type="number" th:field="*{numero}" required>
+        <button type="submit">Calcular</button>
+
+    </form>
+
+
+    <!-- Para imprimir el resultado -->
+
+    <div th:if="${resultado!= null}">
+        <h2>Resultado</h2>
+        <table border="1">
+            <tr>
+                <th th:text="'Tabla del numero indicado'"></th>
+            </tr>
+
+            <tr th:each="fila : ${resultado}">
+                <td th:text="${fila}"></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
