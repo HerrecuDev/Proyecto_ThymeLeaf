@@ -4,17 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Controller;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ConfiguradorCocheDTO {
+public class HeladoDTO {
 
-    //COlores :
-   private String color;
-
-    //Tapiceria :
-   private String tapiceria;
+    private int porcentajeChocolate;
+    private int porcentajeVainilla;
+    private int porcentajefresa;
 }

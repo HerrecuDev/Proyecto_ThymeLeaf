@@ -1,27 +1,43 @@
 <!DOCTYPE html>
-<html lang = "en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Configurador coche</title>
 
-    <link rel="stylesheet" th:href="@{/configuradorCoche.css}">
 </head>
 <body>
 
-    <form th:action="@{/configurador}" th:objct="${configuradorCocheDTO}" method="post">
-        <label for="colorCoche">Color:</label>
-        <select id="colorCoche" th:field="*{Color}" required>
-            <option value="blanco">Blanco</option>
-            <option value="negro">Negro</option>
-            <option value="berenjena">Berenjena</option>
+<h1>Configurador de interior</h1>
 
+<form th:action="@{/configurador}" th:object="${configuradorCocheDTO}" method="post">
 
+    <label for="colorCoche">Color de tapicería:</label>
+    <select id="colorCoche" th:field="*{color}">
+        <option value="blanco">Blanco</option>
+        <option value="negro">Negro</option>
+        <option value="berenjena">Berenjena</option>
+    </select>
 
+    <br><br>
 
+    <label for="material">Material de molduras:</label>
+    <select id="material" th:field="*{material}">
+        <option value="madera">Madera</option>
+        <option value="carbono">Carbono</option>
+    </select>
 
+    <br><br>
 
+    <button type="submit">Ver interior</button>
 
-    </form>
+</form>
+
+<!-- Mostrar resultado -->
+<div th:if="${interior != null}">
+    <h2>Interior configurado</h2>
+
+    <img th:src="@{'/img/InteriorCoche' + ${interior} + '.jpg'}" alt="Interior coche" width="500">
+</div>
 
 </body>
 </html>

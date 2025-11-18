@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Máquina de Helado</title>
+    <link rel="stylesheet" th:href="@{/helado.css}">
+</head>
+<body>
+
+<h1>Generador de Helado por Porcentajes</h1>
+
+<!-- Formulario para introducir los porcentajes -->
+<form th:action="@{/helado}" th:object="${HeladoDTO}" method="post">
+
+    <label>Chocolate (%):</label>
+    <input type="number" th:field="*{porcentajeChocolate}" min="0" max="100" required>
+    <br><br>
+
+    <label>Fresa (%):</label>
+    <input type="number" th:field="*{porcentajefresa}" min="0" max="100" required>
+    <br><br>
+
+    <label>Vainilla (%):</label>
+    <input type="number" th:field="*{porcentajeVainilla}" min="0" max="100" required>
+    <br><br>
+
+    <button type="submit">Generar Helado</button>
+
+</form>
+
+<hr/>
+
+<!-- Mostrar mensaje de error si la suma supera 100% -->
+<p th:if="${error != null}" class="error" th:text="${error}"></p>
+
+<!-- Mostrar el helado si la suma es menor o igual a 100 -->
+<div th:if="${sumaPorcentajes != null and sumaPorcentajes <= 100}">
+    <h2>Resultado del helado</h2>
+
+    <div class="contenedor">
+
+        <!-- Chocolate -->
+        <div class="sabor chocolate"
+             th:if="${porcentajeChocolate > 0}"
+             th:style="'width:' + ${porcentajeChocolate} + '%;'">
+        </div>
+
+        <!-- Fresa -->
+        <div class="sabor fresa"
+             th:if="${porcentajefresa > 0}"
+             th:style="'width:' + ${porcentajefresa} + '%;'">
+        </div>
+
+        <!-- Vainilla -->
+        <div class="sabor vainilla"
+             th:if="${porcentajeVainilla > 0}"
+             th:style="'width:' + ${porcentajeVainilla} + '%;'">
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

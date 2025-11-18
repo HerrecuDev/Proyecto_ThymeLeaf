@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.tablero {
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tablero th, .tablero td {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #333;
+}
+
+.tablero .corner {
+    width: 30px;
+    border: none;
+}
+
+.row-label {
+    background: transparent;
+    font-weight: bold;
+}
+
+.celda {
+    font-size: 28px;
+}
+
+/* colores estándar de tablero */
+.clara {
+    background-color: #f0d9b5; /* claro */
+}
+
+.oscura {
+    background-color: #b58863; /* oscuro */
+}
+
+/* estilo de las piezas */
+.pieza {
+    font-size: 34px;
+    display:inline-block;
+}
+
+/* centrar la tabla en la página */
+.tablero {
+    margin-left: 0;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tablero de Ajedrez</title>
+    <link rel="stylesheet" th:href="@{/tableroAjedrez.css}">
+</head>
+<body>
+<h1>Tablero de Ajedrez (alfil ♗ y caballo ♘)</h1>
+
+<!-- Botón para recargar y obtener nuevas posiciones -->
+<form th:action="@{/ajedrez}" method="get">
+    <button type="submit">Generar posiciones aleatorias</button>
+</form>
+
+<br/>
+
+<table class="tablero">
+    <thead>
+    <tr>
+        <th class="corner"></th> <!-- esquina superior izquierda vacía -->
+        <th th:each="col : ${columnas}" th:text="${col.toUpperCase()}"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <!-- Filas: usamos th:each y guardamos estado para obtener el índice -->
+    <tr th:each="fila, filaStat : ${filas}">
+        <!-- etiqueta de fila a la izquierda -->
+        <th class="row-label" th:text="${fila}"></th>
+
+        <!-- Columnas de la fila -->
+        <td th:each="col, colStat : ${columnas}"
+            th:class="${(filaStat.index + colStat.index) % 2 == 0} ? 'celda clara' : 'celda oscura'">
+
+            <!-- Mostrar Alfil si coincide la posición -->
+            <span th:if="${filaStat.index == filaAlfil and colStat.index == columnaAlfil}" class="pieza" th:text="'♗'"></span>
+
+            <!-- Mostrar Caballo si coincide -->
+            <span th:if="${filaStat.index == filaCaballo and colStat.index == columnaCaballo}" class="pieza" th:text="'♘'"></span>
+
+        </td>
+    </tr>
+    </tbody>
+
+    <tfoot>
+    <tr>
+        <th class="corner"></th>
+        <th th:each="col : ${columnas}" th:text="${col.toUpperCase()}"></th>
+    </tr>
+    </tfoot>
+</table>
+
+</body>
+</html>

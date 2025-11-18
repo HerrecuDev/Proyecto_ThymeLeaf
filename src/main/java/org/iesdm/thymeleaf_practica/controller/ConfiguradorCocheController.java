@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/Configurador")
+@RequestMapping("/configurador")
 public class ConfiguradorCocheController {
     //Recoge los datos
     @GetMapping("")
@@ -25,8 +25,11 @@ public class ConfiguradorCocheController {
     //Los envia a la web :
 
     @PostMapping("")
-    private String cambiarTapiceria(){
+    private String cambiarTapiceria(Model model , @ModelAttribute ConfiguradorCocheDTO configuradorCocheDTO){
 
+        String rutaImagen = "/img/interiorCoche" + configuradorCocheDTO.getColor() + "_" + configuradorCocheDTO.getTapiceria() + ".png";
+
+        model.addAttribute("interior" , rutaImagen);
 
         return "configurador";
     }

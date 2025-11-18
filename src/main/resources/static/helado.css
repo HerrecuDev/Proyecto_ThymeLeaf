@@ -1,0 +1,37 @@
+/* helado.css */
+
+/* Contenedor del helado */
+.contenedor {
+    width: 500px;           /* ancho total del helado */
+    height: 50px;           /* altura de la barra */
+    border: 2px solid #333; /* borde alrededor del helado */
+    display: flex;          /* para que los sabores se alineen en fila */
+    border-radius: 10px;    /* esquinas redondeadas */
+    overflow: hidden;       /* para que no se salga nada */
+}
+
+/* Sabores */
+.sabor {
+    height: 100%;
+}
+
+/* Chocolate */
+.chocolate {
+    background-color: #7B3F00; /* marrón chocolate */
+}
+
+/* Fresa */
+.fresa {
+    background-color: #FF4D6D; /* rosa fresa */
+}
+
+/* Vainilla */
+.vainilla {
+    background-color: #F3E5AB; /* amarillo vainilla */
+}
+
+/* Mensaje de error */
+.error {
+    color: red;
+    font-weight: bold;
+}
